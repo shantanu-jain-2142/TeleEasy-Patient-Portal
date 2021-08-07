@@ -1,0 +1,430 @@
+ ---
+swagger: "2.0"
+info:
+  description: "This is the swagger for the cloud COMS-6998 project"
+  version: "1.0.0"
+  title: "Tele Easy"
+host: "e3f4z55tn8.execute-api.us-east-2.amazonaws.com"
+basePath: "/v2"
+schemes:
+- "https"
+paths:
+  /appointments:
+    get:
+      operationId: "appointmentsGet"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "patient_id"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/appointmentsListObj"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+    post:
+      operationId: "appointmentsPost"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "doctor_id"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "patient_context"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "start_datetime"
+        in: "query"
+        required: true
+        type: "string"
+      - name: "patient_id"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /doctor/search_doctor:
+    get:
+      operationId: "searchDoctor"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "doctor_name"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "cost_high"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "cost_low"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "region"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "patient_id"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "speciality"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/doctorList"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+  /doctor/view_doctor:
+    get:
+      operationId: "viewDoctor"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "doctor_id"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "patient_id"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/doctorViewObj"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+  /patient:
+    get:
+      operationId: "patientView"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "patient_id"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/patientObj"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+      security:
+      - coms-6998-cognitoAuthorizer: []
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /slots:
+    get:
+      operationId: "slotsGet"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "doctor_id"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/doctorSlotList"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+    post:
+      operationId: "slotsPost"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "doctorSlotList_param"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/currPlanObj"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+  /subs_plan:
+    get:
+      operationId: "subsPlanGet"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "patient_id"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/subsPlanGetObj"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+    post:
+      operationId: "subsPlanPost"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "requested_plan_id"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "patient_id"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/currPlanObj"
+        "400":
+          description: "400 response"
+          schema:
+            $ref: "#/definitions/error"
+securityDefinitions:
+  coms-6998-cognitoAuthorizer:
+    type: "apiKey"
+    name: "token"
+    in: "header"
+    x-amazon-apigateway-authtype: "cognito_user_pools"
+definitions:
+  allCompanyPlansObj:
+    type: "array"
+    items:
+      $ref: "#/definitions/companyPlanObj"
+  doctorList:
+    type: "object"
+    properties:
+      results:
+        type: "array"
+        items:
+          $ref: "#/definitions/doctorObj"
+  appointmentsListObj:
+    type: "object"
+    properties:
+      results:
+        type: "array"
+        items:
+          $ref: "#/definitions/appointmentsObj"
+  appointmentsObj:
+    type: "object"
+    properties:
+      appointment_id:
+        type: "string"
+      patient_id:
+        type: "string"
+      doctor_id:
+        type: "string"
+      start_datetime:
+        type: "string"
+        format: "date-time"
+      zoom_meeting_id:
+        type: "string"
+      zoom_meeting_password:
+        type: "string"
+      patient_context:
+        type: "string"
+  doctorSlot:
+    type: "object"
+    properties:
+      doctor_id:
+        type: "string"
+      start_datetime:
+        type: "string"
+        format: "date-time"
+      end_datetime:
+        type: "string"
+        format: "date-time"
+  companyPlanObj:
+    type: "object"
+    properties:
+      plan_id:
+        type: "string"
+      plan_name:
+        type: "string"
+      cost_per_appointment:
+        type: "number"
+      number_of_appointments:
+        type: "number"
+      plan_duration:
+        type: "number"
+      desc:
+        type: "string"
+  error:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+  doctorSlotList:
+    type: "object"
+    properties:
+      results:
+        type: "array"
+        items:
+          $ref: "#/definitions/doctorSlot"
+  patientObj:
+    type: "object"
+    properties:
+      patient_id:
+        type: "string"
+      last_name:
+        type: "string"
+      first_name:
+        type: "string"
+      email:
+        type: "string"
+      address:
+        type: "string"
+      mobile_no:
+        type: "string"
+      curr_plan:
+        $ref: "#/definitions/currPlanObj"
+      profile_pic_url:
+        type: "string"
+  doctorObj:
+    type: "object"
+    properties:
+      doctor_id:
+        type: "string"
+      last_name:
+        type: "string"
+      first_name:
+        type: "string"
+      email:
+        type: "string"
+      address:
+        type: "string"
+      location:
+        type: "array"
+        items:
+          type: "number"
+      mobile_no:
+        type: "string"
+      speciality:
+        type: "array"
+        items:
+          type: "string"
+      units_per_appointment:
+        type: "number"
+  currPlanObj:
+    type: "object"
+    properties:
+      subs_plan_plan_id:
+        type: "integer"
+      subs_plan_remaining_num_appointments:
+        type: "number"
+      subs_plan_start_datetime:
+        type: "string"
+        format: "date-time"
+  doctorViewObj:
+    type: "object"
+    properties:
+      doctor:
+        $ref: "#/definitions/doctorObj"
+      doctorSlotList:
+        type: "array"
+        items:
+          $ref: "#/definitions/doctorSlot"
+  subsPlanGetObj:
+    type: "object"
+    properties:
+      curr_plan:
+        $ref: "#/definitions/currPlanObj"
+      all_plans:
+        $ref: "#/definitions/allCompanyPlansObj"
