@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>TeleEasy - Doctor</title>
+<!-- 
+
+Timeless Template 
+
+http://www.templatemo.com/tm-517-timeless
+
+-->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="/css/templatemo-style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-clockpicker.min.css">
+    <!-- Templatemo style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="text-center tm-site-header">
+                    <div class="tm-site-logo"></div>
+                    <h1 class="pl-4 tm-site-title">TeleEasy</h1>
+                    <div class="tm-site-header-text">
+                        <a href="/doctor/">Consultations</a>
+                        <span >|</span>
+                        <a class="selected" href="/doctor/slots.html">Slots</a>
+                        <span >|</span>
+                        <a href="/">Logout</a>
+                    </div>
+                    <div class="tm-site-header-profile">
+                        <a href="/doctor/me.html">
+                            <img id="doctor-image" src="/img/doctor.png" class="rounded-circle user-image">
+                            <span id="doctor-id">Doctor X</span>
+                        </a>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="container tm-container-2">
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="tm-welcome-text">Your Slots</h2>
+                </div>
+            </div>
+            <div class="row tm-section-mb">
+                <div id="doctors-list" class="col-lg-6">
+                    <div class="row">
+                        <div class=" tm-doctor-timeline-item">
+                            <div class="tm-timeline-item-inner">
+                                <div class="tm-bg-dark tm-doctor-slot-description">
+                                    <button href="#" class="tm-camera-button tm-text-green float-right mb-0">
+                                        <span class="fa fa-calendar"></span>
+                                    </button>
+                                    <h3 class="tm-text-green tm-font-400">Slots Added</h3>
+                                    <span id="slots-list">
+                                        <div class="tm-bg-other tm-doctor-slot-description">
+                                            <p><span class="fa fa-stethoscope"></span><span>&nbsp;</span> Consultation</p>
+                                            <p><span class="fa fa-hourglass-start"></span><span>&nbsp;</span> 15 mins slots</p>
+                                        </div>
+                                    </span>
+                                    <div>
+                                        <p class="tm-text-green float-right mb-0">Enjoy!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class=" tm-doctor-timeline-item">
+                            <div class="tm-timeline-item-inner">
+                                <div class="tm-bg-dark tm-doctor-slot-description">
+                                    <button href="#" class="tm-camera-button tm-text-green float-right mb-0">
+                                        <span class="fa fa-calendar"></span>
+                                    </button>
+                                    <h3 class="tm-text-green tm-font-400">Slots to Add</h3>
+                                    <span id="slots-to-add-list">
+                                    </span>
+                                    <button id="upload-slots" class="tm-camera-button tm-text-white float-right mb-0" 
+                                        style="height: 50px;font-size: x-large;"
+                                    >
+                                        <span class="fa fa-plus"></span>&nbsp;Upload Slot
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class=" tm-doctor-timeline-item">
+                        <div class="tm-timeline-item-inner">
+                            <div class="tm-bg-dark tm-doctor-timeline-description" style="width: 100%;">
+                                <button href="#" class="tm-camera-button tm-text-green float-right mb-0">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                                <h3 class="tm-text-green tm-font-400">Add a new slot</h3>
+                                <p><span class="fa fa-eye"></span><span>&nbsp;make yourself available to patients...</span> </p>
+                                <div class="calendar-wrapper">
+                                    <button id="btnPrev" type="button">Prev</button>
+                                        <button id="btnNext" type="button">Next</button>
+                                    <div id="divCal"></div>
+                                </div>
+                                <div style="display: inline-block;margin-top: 45%;" class="float-right ml-0">
+                                    <span>Selected:</span>
+                                    <p id="selected-slot-date"></p>
+                                </div>
+                                <div class="input-group clockpicker" style=" width: 80%; ">
+                                    <input type="text" id="selected-slot-time" class="form-control">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-time"></span>
+                                    </span>
+                                </div>
+                                <button id="add-slots" class="tm-camera-button tm-text-white float-right mb-0" 
+                                    style="height: 50px;font-size: x-large;"
+                                >
+                                    <span class="fa fa-plus"></span>&nbsp;Add Slot
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  row -->
+            <hr>
+
+            <div class="row tm-section-mt">
+                <div class="col-lg-6">
+                    <h3 class="mb-4 tm-text-gray">Our Location</h3>
+                    <!-- GOOGLE MAP -->
+                    <div id="google-map" class="text-center mb-5">
+                    <!-- How to change your own map point
+                            1. Go to Google Maps
+                            2. Click on your location point
+                            3. Click "Share" and choose "Embed map" tab
+                            4. Copy only URL and paste it within the src="" field below
+                        -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.92984161185!2d-73.96476138472944!3d40.80753547932152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f63e96d30dc9%3A0x577933f947e52750!2sColumbia%20University!5e0!3m2!1sen!2sus!4v1617570517741!5m2!1sen!2sus"
+                        class="google-map-iframe" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <h3 class="mb-4 tm-text-gray">Contact Us</h3>
+                    <form action="#contact" method="post" class="tm-contact-form">
+                        <div class="row">
+                            <div class="form-group col-xl-6">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name..." required/>
+                            </div>
+                            <div class="form-group col-xl-6">
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email..." required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact_message" name="contact_message" class="form-control" rows="6" placeholder="Your Message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn  tm-btn-send">Send It</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <!-- Footer -->
+            <footer class="row mt-5 mb-5">
+                <div class="col-lg-12">
+                    <p class="text-center tm-text-gray tm-copyright-text mb-0">Copyright &copy;
+                        <span class="tm-current-year">2021</span> TeleEasy
+                    </p>
+                </div>
+            </footer>
+        </div>
+    <!-- .container -->
+
+    <script src="/js/jquery.min.js"></script>
+    <!-- <script src="/js/jquery-3.2.1.slim.min.js"></script> -->
+    <!-- <script src="/js/templatemo-script.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-clockpicker.min.js"></script>
+    <script src="/js/doctor-slots.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="/js/sdk/apigClient.js"></script>
+
+</body>
+</html>

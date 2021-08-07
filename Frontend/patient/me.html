@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>TeleEasy - Patient</title>
+<!-- 
+
+Timeless Template 
+
+http://www.templatemo.com/tm-517-timeless
+
+-->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="/css/templatemo-style.css">
+    <!-- Templatemo style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="text-center tm-site-header">
+                    <div class="tm-site-logo"></div>
+                    <h1 class="pl-4 tm-site-title">TeleEasy</h1>
+                    <div class="tm-site-header-text">
+                        <a href="/patient/">Home</a>
+                        <span >|</span>
+                        <a href="/patient/search-book-doctor.html">Book</a>
+                        <span >|</span>
+                        <a href="/patient/subscription.html">Subscription</a>
+                        <span >|</span>
+                        <a href="/">Logout</a>
+                    </div>
+                    <div class="tm-site-header-profile">
+                        <a href="/patient/me.html">
+                            <img src="/img/patient.png" class="rounded-circle user-image">
+                            <span id="patient-id">Patient X</span>
+                        </a>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="container tm-container-2">
+            <hr>
+            <!-- <div class="row">
+                <div class="col">
+                    <h2 class="tm-welcome-text">Profile</h2>
+                </div>
+            </div> -->
+            <div class="row tm-section-mb">
+                <div id="info-list" class="col-lg-12">
+                    <div class=" tm-profile-timeline-item">
+                        <div class="tm-bg-dark tm-profile-timeline-description">
+                            <button href="#" class="tm-camera-button tm-text-green float-right mb-0">
+                                <span class="fa fa-hand-spock-o"></span>
+                            </button>
+                            <h3 class="tm-text-green tm-font-400">Hi there!</h3>
+                            <span><span class="fa fa-stethoscope"></span><span>&nbsp;</span>How are you feeling today?</span>
+                            <!-- <p>Take a look at your profile</p> -->
+                            <p class="tm-text-green float-right mb-0">Stay Healthy!</p>
+                        </div>            
+                        <div class="tm-timeline-connector-vertical"></div>
+                    </div>
+                    <div class=" tm-profile-timeline-item">
+                        <div class="tm-bg-dark tm-profile-timeline-description">
+                            <button href="#" class="tm-camera-button tm-text-cyan float-right mb-0">
+                                <span class="fa fa-user"></span>
+                            </button>
+                            <h3 class="tm-text-cyan tm-font-400">Basic Details</h3>
+                            <p><span class="fa fa-eye"></span><span>&nbsp;</span>Take a look at your details..</p>
+                            <span>First Name: <span style="font-weight: 600;" id="first-name">-</span></span><br>
+                            <span>Last Name: <span style="font-weight: 600;" id="last-name">-</span></span><br>
+                            <span>Gender: <span style="font-weight: 600;" id="gender">-</span></span><br>
+                            <span>DOB: <span style="font-weight: 600;" id="dob">-</span></span>
+                        </div>
+                        <div class="tm-timeline-connector-vertical"></div>
+                    </div>
+                    <div class=" tm-profile-timeline-item">
+                        <div class="tm-bg-dark tm-profile-timeline-description">
+                            <button href="#" class="tm-camera-button tm-text-orange float-right mb-0">
+                                <span class="fa fa-phone"></span>
+                            </button>
+                            <h3 class="tm-text-orange tm-font-400">Contact Details</h3>
+                            <p><span class="fa fa-map-marker"></span><span>&nbsp;</span>Make sure you are reachable!</p>
+                            <span>Email: <span style="font-weight: 600;" id="email">-</span></span><br>
+                            <span>Mobile: <span style="font-weight: 600;" id="mobile-num">-</span></span><br>
+                            <span>Address: <span style="font-weight: 600;" id="address">-</span></span>
+                        </div>
+                        <div class="tm-timeline-connector-vertical"></div>
+                    </div>
+                    <div class=" tm-profile-timeline-item">
+                        <div class="tm-bg-dark tm-profile-timeline-description">
+                            <button href="#" class="tm-camera-button tm-text-yellow float-right mb-0">
+                                <span class="fa fa-medkit"></span>
+                            </button>
+                            <h3 class="tm-text-yellow tm-font-400">Subscription Details</h3>
+                            <p><span class="fa fa-credit-card"></span><span>&nbsp;</span>Your health package&nbsp; <span class="fa fa-smile-o"></span></p>
+                            <span>Subscription Plan: <span style="font-weight: 600;" id="subscription-plan-id">-</span></span><br>
+                            <span>Subscription Start: <span style="font-weight: 600;" id="subscription-plan-date">-</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  row -->
+            <hr>
+            <div class="row tm-section-mt">
+                <div class="col-lg-6">
+                    <h3 class="mb-4 tm-text-gray">Our Location</h3>
+                    <!-- GOOGLE MAP -->
+                    <div id="google-map" class="text-center mb-5">
+                    <!-- How to change your own map point
+                            1. Go to Google Maps
+                            2. Click on your location point
+                            3. Click "Share" and choose "Embed map" tab
+                            4. Copy only URL and paste it within the src="" field below
+                        -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.92984161185!2d-73.96476138472944!3d40.80753547932152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f63e96d30dc9%3A0x577933f947e52750!2sColumbia%20University!5e0!3m2!1sen!2sus!4v1617570517741!5m2!1sen!2sus"
+                        class="google-map-iframe" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <h3 class="mb-4 tm-text-gray">Contact Us</h3>
+                    <form action="#contact" method="post" class="tm-contact-form">
+                        <div class="row">
+                            <div class="form-group col-xl-6">
+                                <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name..." required/>
+                            </div>
+                            <div class="form-group col-xl-6">
+                                <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email..." required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact_message" name="contact_message" class="form-control" rows="6" placeholder="Your Message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn  tm-btn-send">Send It</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <!-- Footer -->
+            <footer class="row mt-5 mb-5">
+                <div class="col-lg-12">
+                    <p class="text-center tm-text-gray tm-copyright-text mb-0">Copyright &copy;
+                        <span class="tm-current-year">2021</span> TeleEasy
+                    </p>
+                </div>
+            </footer>
+        </div>
+    <!-- .container -->
+
+    <script src="/js/jquery.min.js"></script>
+    <!-- <script src="/js/jquery-3.2.1.slim.min.js"></script> -->
+    <!-- <script src="/js/templatemo-script.js"></script> -->
+    <script src="/js/patient-about.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="/js/sdk/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="/js/sdk/apigClient.js"></script>
+
+</body>
+</html>
