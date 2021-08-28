@@ -24,10 +24,10 @@ We are able to subsidize consultation costs by leveraging the underlying
 - Not bound to one doctor throughout the subscription.
 
 ### Architecture
-![TeleEasy Architecture](/Images/Architecture.jpg)
+![TeleEasy Architecture](/Images/Architecture.jpeg)
 
 ### Flow Diagram
-![TeleEasy Flow Diagram](/Images/Flow_Diagram.jpg)
+![TeleEasy Flow Diagram](/Images/Flow_Diagram.jpeg)
 
 ### Demo
 [Demo Presentation](https://youtu.be/UxvM4-ldKU4)
